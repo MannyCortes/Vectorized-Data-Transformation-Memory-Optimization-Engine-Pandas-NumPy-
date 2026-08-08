@@ -65,6 +65,7 @@ def load_data_to_db(engine, df):
                 #np.is in checks every element in the batch and checks df values
                 #unique_df then becomes a boolean array matching the shape of our batch_numpy
                 #numpy array and t/f values 
+                #query_df[val] turns into a 1d array of vals
                 unique_df = np.isin(batch_numpy, query_df[val])
                 #new_id is still a numpy array holding the unique ids filtered from the mask
                 #applies mask to return values not in the db

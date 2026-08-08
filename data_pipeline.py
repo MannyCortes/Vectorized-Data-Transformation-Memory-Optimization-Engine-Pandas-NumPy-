@@ -86,7 +86,7 @@ def regex_cleaning(df):
         #convert each data type back into their respective types
         if col in clean_data.columns:
             clean_data[col] = pd.to_numeric(clean_data[col])
-
+    print(len(clean_data))
     if len(quarantined_data) > 0:
         logging.warning(f"Quarantined {len(quarantined_data)} rows due to regex validation failure.")
         quarantined_data.to_csv("quarantined_data.csv", date_format=dt.datetime.now(), index=False)
